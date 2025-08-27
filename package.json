@@ -5,7 +5,8 @@
   "main": "gruntfile.js",
   "scripts": {
     "grunt": "grunt",
-    "build": "grunt build",
+    "build": "grunt build grunt less:production concat:dist uglify:dist replace:dist",
+    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
