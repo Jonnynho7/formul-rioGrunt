@@ -1,0 +1,88 @@
+@corDeFundo: #8395a7;
+@corDoContainer: #576574;
+@fonte1: "Montserrat", sans-serif;
+@fonte2: "Ubuntu", sans-serif;
+
+body {
+    background:linear-gradient(190deg, #00d2ff 0%, #3a47d5 100%)
+}
+
+.container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 600px;
+    height: 50%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px, 40px;
+        font-size: 30px;
+        font-family: @fonte1;
+        margin-bottom: 24px auto;
+    }
+
+    .formulario {
+        font-family: @fonte1;
+        display: flex;
+        padding-top: 30%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            background-color: transparent;
+            display: block;
+            margin: 10px 0;
+            width: 350px;
+            height: 50px;
+            border: none;
+            border-bottom: 2px solid #8395a7;
+            
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+
+        input::placeholder {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        footer {
+            margin-right: 30%;
+            padding-top: 20px;
+
+            a {
+                color: #fff
+            }
+        }
+    }
+}
+
+.btn-submit {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-family: @fonte1;
+    font-size: 15px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+
+    &&:hover{
+        transform: scale(1.2);
+        
+    }
+}
+
