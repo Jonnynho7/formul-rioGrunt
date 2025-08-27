@@ -16,52 +16,68 @@ module.exports = function (grunt) {
                 }
             }
         },
-        watch:{
-            less:{
+        watch: {
+            less: {
                 files: ['src/styles/**/*.less'],
                 tasks: ['less:development']
             }
         },
-        uglify:{
-            target:{
-                files:{
+        uglify: {
+            target: {
+                files: {
                     'dist/scripts/main.min.js': 'src/scripts/main.js'
                 }
             }
         },
-        replace:{
-            dev:{
-                options:{
-                    patterns:[
+        replace: {
+            dev: {
+                options: {
+                    patterns: [
                         {
                             match: 'ENDERECO_CSS',
-                            replacement: '../dev/styles/main.css'
+                            replacement: 'styles/main.css'
                         }
                     ]
                 },
-                files:[
+                files: [
                     {
                         expand: true,
                         flatten: true,
-                        src:['src/index.html'],
-                        dest: 'dist/'
+                        src: ['src/index.html'],
+                        dest: 'dev/'
                     }
                 ]
+            },
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'ENDERECO_CSS',
+                            replacement: 'styles/main.min.css'
+                        },
+                        {
+                            match: 'ENDERECO_DO_JS',
+                            replacement: './scripts/main.min.js'
+                        }
+                    ],
+                },
+                files: [{
+                    src: './src/index.html', dest: 'dist/index.html'
+                }]
             }
         },
-        htmlmin:{
-            dist:{
+        htmlmin: {
+            dist: {
                 options: {
                     removeComments: true,
                     collapseWhitespace: true,
-                    
+
                 },
-                files:{
+                files: {
                     'dist/index.html': 'src/index.html'
                 }
             }
-        },
-
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
