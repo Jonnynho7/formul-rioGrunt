@@ -94,7 +94,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
     'less:production',
     'uglify',
-    'replace:dist',
     'htmlmin:dist'
 ]);
 }
