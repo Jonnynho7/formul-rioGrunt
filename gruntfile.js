@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src:['src/index.html'],
-                        dest: 'dev/'
+                        dest: 'dist/'
                     }
                 ]
             }
